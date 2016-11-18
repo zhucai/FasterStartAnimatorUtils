@@ -7,12 +7,14 @@ import android.util.Property;
 
 public class FasterStartAnimatorUtils {
 
+    static public final float TIME_PER_FRAME = 16.7f;
+
     static public float[] processFloatParams(long duration, TimeInterpolator interpolator, float... values) {
         if (values == null || values.length == 0) return null;
 
         if (values.length == 1) return processFloatParams(duration, interpolator, 0.f, values[0]);
 
-        float f = 16.7f / (duration + 16.7f);
+        float f = TIME_PER_FRAME / (duration + TIME_PER_FRAME);
         if (interpolator != null) {
             f = interpolator.getInterpolation(f);
         }
@@ -25,7 +27,7 @@ public class FasterStartAnimatorUtils {
 
         if (values.length == 1) return processIntParams(duration, interpolator, 0, values[0]);
 
-        float f = 16.7f / (duration + 16.7f);
+        float f = TIME_PER_FRAME / (duration + TIME_PER_FRAME);
         if (interpolator != null) {
             f = interpolator.getInterpolation(f);
         }
