@@ -1,0 +1,26 @@
+# FasterStartAnimatorUtils [Android]
+
+## What?
+This is a utils to make animator's starting faster about 16.7ms.
+
+## Why?
+Look at the normal animator's frame sequences:<br /> <br />
+![image](https://raw.githubusercontent.com/zhucai/FasterStartAnimatorUtils/master/doc-resources/before.png)
+<br /> <br />
+The first frame is doing nothing but wasted 16.7ms.
+<br />
+
+Usually, we don't want the first frame wasted:<br /> <br />
+![image](https://raw.githubusercontent.com/zhucai/FasterStartAnimatorUtils/master/doc-resources/after.png)
+<br /> <br />
+We want to start moving immediately!
+<br />
+
+## How?
+We can use ValueAnimator.ofFloat(0.2f, 1.f) instead of use ValueAnimator.ofFloat(0.f, 1.f) in this example.<br />
+In fact, we need calculate the first parameter in practice. So there is this stuff.
+<br /> <br />
+If you used ValueAnimator.ofFloat(int... values) before, I recommend you use <br />
+FasterStartAnimatorUtils.ofFloat(long duration, TimeInterpolator interpolator, float... values) instead.<br /> <br />
+If you used View.animate().alpha(float value) before, I recommend you use <br />
+FasterStartAnimatorUtils.ofFloat(view, Value.ALPHA, duration, interpolator, values) instead.
