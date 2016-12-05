@@ -18,7 +18,7 @@ We want to start moving immediately!
 
 ## How?
 We can use ValueAnimator.ofFloat(0.2f, 1.f) instead of use ValueAnimator.ofFloat(0.f, 1.f) in this example.<br />
-In fact, we need calculate the first parameter in practice. So there is this stuff.
+In fact, we need calculate the first parameter in practical use. So there is this stuff.
 <br /> <br />
 If you used ValueAnimator.ofFloat(int... values) before, I recommend you use <br />
 FasterStartAnimatorUtils.ofFloat(long duration, TimeInterpolator interpolator, float... values) instead.<br /> <br />
