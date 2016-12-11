@@ -20,7 +20,7 @@ We want to start moving immediately!
 We can use ValueAnimator.ofFloat(0.2f, 1.f) instead of use ValueAnimator.ofFloat(0.f, 1.f) in this example.<br />
 In fact, we need calculate the first parameter in practical use. So there is this stuff.
 <br /> <br />
-If you used ValueAnimator.ofFloat(int... values) before, I recommend you use <br />
+If you used ValueAnimator.ofFloat(int... values) before, I recommend you using <br />
 FasterStartAnimatorUtils.ofFloat(long duration, TimeInterpolator interpolator, float... values) instead.<br /> <br />
-If you used View.animate().alpha(float value) before, I recommend you use <br />
+If you used View.animate().alpha(float value) before, I recommend you using <br />
 FasterStartAnimatorUtils.ofFloat(view, Value.ALPHA, duration, interpolator, values) instead.
